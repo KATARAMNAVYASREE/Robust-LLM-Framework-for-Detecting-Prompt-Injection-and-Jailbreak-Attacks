@@ -1,0 +1,8 @@
+streamlit>=1.40
+fastapi>=0.110
+uvicorn[standard]>=0.27
+beautifulsoup4>=4.12
+pandas>=2.0
+scikit-learn>=1.3
+# Optional local speech-to-text (no paid API; downloads model files on first use):
+# faster-whisper>=1.0

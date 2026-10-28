@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Robust LLM Security Shield – Command Center</title>
+<style>
+:root{--bg:#050d1a;--panel:#0a1a2e;--panel2:#0d2038;--line:#14304f;--text:#e6f0ff;--mut:#7f95b3;--cy:#12c8ff;--bl:#2f7bff;--gr:#22d37a;--rd:#ff4d4f;--or:#ff9a2e;--yl:#f2c230;--pu:#8a63ff;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:radial-gradient(1200px 600px at 30% -10%,#0a2a4d 0,var(--bg) 60%);color:var(--text);font:13px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;min-height:100vh}
+.app{display:grid;grid-template-columns:210px minmax(0,1fr) 270px;min-height:100vh}
+aside.nav{background:#071425;border-right:1px solid var(--line);padding:16px 12px;display:flex;flex-direction:column;gap:4px}
+.brand{display:flex;gap:10px;align-items:center;margin-bottom:6px}
+.brand b{font-size:15px;line-height:1.15;display:block}
+.brand svg{flex:none}
+.tag{color:var(--mut);font-size:10.5px;margin:4px 0 12px}
+.nav a{display:flex;gap:10px;align-items:center;padding:9px 10px;border-radius:8px;color:#b9c9e0;text-decoration:none;cursor:pointer}
+.nav a:hover{background:#0c2038}
+.nav a.on{background:#0f2f55;color:#fff;box-shadow:inset 0 0 0 1px #1c4a80}
+.nav a i{width:16px;height:16px;border:1.6px solid currentColor;border-radius:4px;opacity:.8;flex:none}
+.sec{color:var(--mut);font-size:10.5px;letter-spacing:.06em;margin:16px 10px 6px}
+.st{display:flex;gap:8px;align-items:flex-start;padding:5px 10px}
+.st u{width:9px;height:9px;border-radius:50%;background:var(--gr);margin-top:4px;box-shadow:0 0 8px var(--gr);flex:none;text-decoration:none}
+.st small{display:block;color:var(--mut);font-size:11px}
+.sp{flex:1}
+.ver{display:flex;gap:8px;align-items:center;padding:10px;color:var(--mut);font-size:11px;border-top:1px solid var(--line);margin-top:8px}
+main{padding:16px 18px;min-width:0}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.pills{display:flex;gap:14px;font-size:10.5px;color:var(--mut);margin-bottom:8px}
+.pills span:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--cy);margin-right:6px}
+h1{font-size:22px;margin-bottom:2px}
+.top p{color:var(--mut)}
+.ctl{display:flex;gap:10px;align-items:center}
+.sel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 12px;min-width:190px}
+.sel small{display:block;color:var(--mut);font-size:10px}
+.btn{background:linear-gradient(180deg,#1b8cff,#0b63e0);border:0;color:#fff;font-weight:600;padding:11px 20px;border-radius:8px;cursor:pointer;font-size:13px;box-shadow:0 0 18px #1b8cff55}
+.btn:focus-visible,.nav a:focus-visible,input:focus-visible{outline:2px solid var(--cy);outline-offset:2px}
+.av{width:30px;height:30px;border-radius:50%;background:var(--pu);display:grid;place-items:center;font-weight:700}
+.card{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:14px;min-width:0}
+.card h3{font-size:13px;font-weight:600;margin-bottom:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.card h3 span{color:var(--mut);font-weight:400;font-size:11px}
+.kpis{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr;gap:12px;margin-bottom:12px}
+.kpi{display:flex;flex-direction:column;gap:2px}
+.kpi .l{display:flex;gap:8px;align-items:center;color:#c9d8ee}
+.ico{width:22px;height:22px;border-radius:6px;display:grid;place-items:center;font-size:12px}
+.big{font-size:32px;font-weight:700;display:flex;align-items:baseline;gap:10px}
+.up{font-size:11px;font-weight:600}
+.g{color:var(--gr)}.r{color:var(--rd)}.o{color:var(--or)}
+.sub{color:var(--mut);font-size:11px}
+.row2{display:grid;grid-template-columns:1.5fr 1.1fr .8fr;gap:12px;margin-bottom:12px}
+.bars div.b{display:grid;grid-template-columns:96px 1fr 34px;gap:8px;align-items:center;margin:9px 0;font-size:12px}
+.bars i{display:block;height:8px;border-radius:5px}
+.bars em{font-style:normal;color:#c9d8ee;text-align:right}
+.tabs{display:flex;gap:8px}
+.mini{background:#0b2342;border:1px solid var(--line);border-radius:7px;padding:4px 10px;color:#c9d8ee;font-size:11px}
+.legend{display:flex;gap:14px;font-size:11px;color:#c9d8ee;margin-bottom:4px}
+.legend b:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:5px;background:var(--c)}
+.sys{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:-6px}
+.sys div{border:1px solid var(--line);border-radius:6px;text-align:center;padding:4px;font-size:10.5px;color:var(--mut)}
+.sys b{display:block;color:var(--gr);font-size:13px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:640px}
+th{color:var(--mut);font-weight:500;text-align:left;font-size:11px;padding:8px 6px;border-bottom:1px solid var(--line)}
+td{padding:8px 6px;border-bottom:1px solid #102845;font-size:12px}
+.bd{display:inline-block;min-width:52px;text-align:center;font-size:10px;font-weight:700;padding:2px 6px;border-radius:4px}
+.CRITICAL{background:#7a1f2b;color:#ff9aa0}.HIGH{background:#7a3d12;color:#ffb36b}.MEDIUM{background:#c99a12;color:#2a1d00}.LOW{background:#16407a;color:#8fc2ff}
+.dc{display:inline-block;min-width:54px;text-align:center;font-size:10px;font-weight:700;padding:3px 8px;border-radius:5px;border:1px solid}
+.BLOCK{color:#ff6b6e;border-color:#a8323a;background:#3a1219}.REVIEW{color:#ffad5c;border-color:#9a5a1d;background:#35210d}.ALLOW{color:#4ee08d;border-color:#1d8a52;background:#0c2e1e}
+.tools{display:flex;gap:8px}
+.tools input{background:#071425;border:1px solid var(--line);border-radius:7px;color:var(--text);padding:6px 10px;width:240px;max-width:100%}
+.foot{display:flex;justify-content:space-between;align-items:center;margin-top:10px;color:var(--mut);font-size:11px;flex-wrap:wrap;gap:8px}
+.pg{display:flex;gap:4px}.pg span{width:22px;height:22px;display:grid;place-items:center;border:1px solid var(--line);border-radius:5px;color:#c9d8ee}.pg .on{background:#1b5fb8;color:#fff}
+aside.cop{background:#071425;border-left:1px solid var(--line);padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.qa{display:flex;gap:10px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:10px;cursor:pointer;width:100%;color:var(--text);text-align:left;font:inherit}
+.qa:hover{border-color:#2a5d99}
+.qa small{display:block;color:var(--mut);font-size:10.5px}
+.chat{flex:1;display:flex;flex-direction:column;gap:10px;overflow:auto;max-height:340px}
+.m{padding:9px 11px;border-radius:9px;max-width:92%;font-size:12px}
+.bot{background:#10294a;align-self:flex-start}.me{background:#1769e0;align-self:flex-end}
+.chips{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.chips button{background:#0b2342;border:1px solid var(--line);color:#c9d8ee;border-radius:14px;padding:4px 10px;font-size:11px;cursor:pointer}
+.ask{display:flex;gap:8px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px;margin-top:4px}
+.ask input{flex:1;background:none;border:0;color:var(--text);min-width:0}
+.send{background:var(--bl);border:0;color:#fff;border-radius:8px;width:34px;height:30px;cursor:pointer}
+@media(max-width:1150px){.app{grid-template-columns:200px minmax(0,1fr)}aside.cop{grid-column:1/-1;border-left:0;border-top:1px solid var(--line)}.kpis{grid-template-columns:1fr 1fr}.row2{grid-template-columns:1fr 1fr}.row2>:first-child{grid-column:1/-1}}
+@media(max-width:700px){.app{grid-template-columns:1fr}aside.nav{display:none}.kpis,.row2{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="nav">
+  <div class="brand"><svg width="36" height="40" viewBox="0 0 36 40"><path d="M18 2 4 8v11c0 9 6 16 14 19 8-3 14-10 14-19V8z" fill="#0f3a6e" stroke="#12c8ff" stroke-width="2"/><path d="M18 11l-7 3v5c0 5 3 8 7 10 4-2 7-5 7-10v-5z" fill="#12c8ff" opacity=".7"/></svg><div><b>Robust LLM<br>Security Shield</b></div></div>
+  <div class="tag">Secure Prompts. Safer AI.<br>Local &amp; Open Source.</div>
+  <a class="on" tabindex="0"><i></i>Overview</a><a tabindex="0"><i></i>Prompt Scanner</a><a tabindex="0"><i></i>Threat Findings</a><a tabindex="0"><i></i>Documents &amp; RAG</a><a tabindex="0"><i></i>Evaluation Lab</a><a tabindex="0"><i></i>Analytics</a><a tabindex="0"><i></i>Voice Chatbot</a>
+  <div class="sec">SYSTEM STATUS</div>
+  <div class="st"><u></u><div>Ollama (qwen2.5:3b)<small>Connected</small></div></div>
+  <div class="st"><u></u><div>Telugu ASR (Sherpa ONNX)<small>Ready</small></div></div>
+  <div class="st"><u></u><div>Security Model<small>Loaded</small></div></div>
+  <div class="st"><u></u><div>Database<small>Connected</small></div></div>
+  <div class="sp"></div>
+  <a tabindex="0"><i></i>Settings</a><a tabindex="0"><i></i>Help &amp; Docs</a><a tabindex="0"><i></i>About</a>
+  <div class="ver"><span class="g">&#9679;</span><div>v1.0.0 &nbsp; <span class="g">Local Only</span></div></div>
+</aside>
+
+<main>
+  <div class="pills"><span>LOCAL AI SECURITY PLATFORM</span><span>ZERO PAID APIS</span></div>
+  <div class="top">
+    <div><h1>Security Command Center</h1><p>Detect, analyze and block prompt injection, jailbreak and indirect attacks before they reach an LLM.</p></div>
+    <div class="ctl"><div class="sel"><small>Environment</small>Local (Offline) &#9662;</div><button class="btn" id="scan">Run scan</button><div class="av">N</div></div>
+  </div>
+
+  <div class="kpis">
+    <div class="card" style="display:flex;gap:12px;align-items:center">
+      <svg width="86" height="86" viewBox="0 0 86 86"><circle cx="43" cy="43" r="36" fill="none" stroke="#12304f" stroke-width="8"/><circle cx="43" cy="43" r="36" fill="none" stroke="#12c8ff" stroke-width="8" stroke-linecap="round" stroke-dasharray="185 226" transform="rotate(-90 43 43)"/><text x="43" y="47" text-anchor="middle" fill="#fff" font-size="24" font-weight="700">82</text><text x="43" y="60" text-anchor="middle" fill="#7f95b3" font-size="9">/ 100</text></svg>
+      <div><div style="color:#c9d8ee">Security score</div><div class="g up">&#9650; 12%</div><div class="g sub">Good security posture</div></div>
+    </div>
+    <div class="card kpi"><div class="l"><span class="ico" style="background:#103a6e">&#9636;</span>Scans today</div><div class="big">128 <span class="up g">&#9650; 24%</span></div><div class="sub">vs. yesterday</div><svg id="k1" height="34" width="100%" preserveAspectRatio="none"></svg></div>
+    <div class="card kpi"><div class="l"><span class="ico" style="background:#5a1520;color:#ff6b6e">&#8856;</span>Threats blocked</div><div class="big">24 <span class="up r">&#9650; 8%</span></div><div class="sub">Malicious prompts prevented</div><svg id="k2" height="34" width="100%" preserveAspectRatio="none"></svg></div>
+    <div class="card kpi"><div class="l"><span class="ico" style="background:#5a3a0c;color:#ffad5c">&#9888;</span>Needs review</div><div class="big">7 <span class="up r">&#9650; 40%</span></div><div class="sub">Require human review</div><svg id="k3" height="34" width="100%" preserveAspectRatio="none"></svg></div>
+  </div>
+
+  <div class="row2">
+    <div class="card"><h3>Threat activity <span>(Last 24 hours)</span><span class="mini">Last 24 hours &#9662;</span></h3>
+      <div class="legend"><b style="--c:#2f7bff">Total scans</b><b style="--c:#ff4d4f">Blocked</b><b style="--c:#22d37a">Allowed</b></div>
+      <svg id="ch" viewBox="0 0 520 190" width="100%"></svg></div>
+    <div class="card"><h3>Threat breakdown <span class="mini">Attack types &#9662;</span></h3>
+      <div class="bars">
+        <div class="b">Prompt injection<span style="background:#1a3556;border-radius:5px"><i style="width:84%;background:linear-gradient(90deg,#7b4dff,#c05bff)"></i></span><em>42%</em></div>
+        <div class="b">Jailbreak<span style="background:#1a3556;border-radius:5px"><i style="width:48%;background:linear-gradient(90deg,#1769e0,#12c8ff)"></i></span><em>24%</em></div>
+        <div class="b">Indirect injection<span style="background:#1a3556;border-radius:5px"><i style="width:36%;background:linear-gradient(90deg,#1b8cff,#12c8ff)"></i></span><em>18%</em></div>
+        <div class="b">Obfuscation<span style="background:#1a3556;border-radius:5px"><i style="width:20%;background:linear-gradient(90deg,#ff7a3d,#ff4d6d)"></i></span><em>10%</em></div>
+        <div class="b">Data exfiltration<span style="background:#1a3556;border-radius:5px"><i style="width:12%;background:linear-gradient(90deg,#ff6b6e,#ff9a9a)"></i></span><em>6%</em></div>
+      </div></div>
+    <div class="card"><h3>System integrity</h3>
+      <svg viewBox="0 0 160 100" width="100%"><path d="M20 90a60 60 0 0 1 120 0" fill="none" stroke="#12304f" stroke-width="12" stroke-linecap="round"/><path d="M20 90a60 60 0 0 1 120 0" fill="none" stroke="#12e0c0" stroke-width="12" stroke-linecap="round" pathLength="100" stroke-dasharray="94 100"/><text x="80" y="76" text-anchor="middle" fill="#fff" font-size="24" font-weight="700">94%</text><text x="80" y="92" text-anchor="middle" fill="#7f95b3" font-size="9">Overall integrity</text></svg>
+      <div class="sys"><div><b>72%</b>Memory</div><div><b>68%</b>Processor</div><div><b>78%</b>Storage</div></div></div>
+  </div>
+
+  <div class="card">
+    <h3>Recent security findings <span class="tools"><input id="q" placeholder="Search findings, prompts, or sources..." aria-label="Search findings"><span class="mini">Filters &#9662;</span><span class="mini">Export &#9662;</span></span></h3>
+    <div class="tw"><table><thead><tr><th>#</th><th>Threat / Description</th><th>Source</th><th>Risk score</th><th>Decision</th><th>Time</th><th>Actions</th></tr></thead><tbody id="tb"></tbody></table></div>
+    <div class="foot"><span>Showing 1&ndash;7 of 124 results</span><div class="pg"><span>&lsaquo;</span><span class="on">1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>&hellip;</span><span>18</span><span>&rsaquo;</span></div><span class="mini">7 / page &#9662;</span></div>
+  </div>
+</main>
+
+<aside class="cop">
+  <div><b style="font-size:14px">&#129302; Security Copilot</b><p class="sub" style="margin-top:4px">Ask questions, analyze prompts, or get security insights in natural language.</p></div>
+  <button class="qa" data-q="Explain a threat"><span class="ico" style="background:#1b3a8a">&#9679;</span><div>Explain a threat<small>Get a detailed explanation</small></div></button>
+  <button class="qa" data-q="Scan a document"><span class="ico" style="background:#103a6e">&#9636;</span><div>Scan a document<small>Check a PDF or text for hidden attacks</small></div></button>
+  <button class="qa" data-q="Test a jailbreak"><span class="ico" style="background:#4a1e6e">&#9670;</span><div>Test a jailbreak<small>Try a sample adversarial prompt</small></div></button>
+  <div class="chat" id="chat">
+    <div class="m bot">&#128075; Hello! I'm Security Shield. I can analyze prompts, documents, and help you understand security threats. How can I help you today?</div>
+    <div class="m me">What is prompt injection?</div>
+    <div class="m bot">Prompt injection is a security vulnerability where an attacker crafts input to override the LLM's original instructions&hellip;</div>
+  </div>
+  <div class="chips"><button>Check this prompt for injection</button><button>Explain my last scan</button><button>How do I harden my RAG pipeline?</button></div>
+  <div class="ask"><input id="in" placeholder="Ask Security Shield anything..." aria-label="Ask Security Shield"><button class="send" id="go" aria-label="Send">&#10148;</button></div>
+</aside>
+</div>
+
+<script>
+const rows=[["CRITICAL","Prompt injection attempt (ignore previous instructions)","User prompt",.96,"BLOCK","Oct 25, 2026 09:14 PM"],["CRITICAL","Jailbreak: DAN style request","Chat input",.91,"BLOCK","Oct 25, 2026 08:47 PM"],["HIGH","Indirect injection in PDF (hidden text)","Document (RAG)",.78,"REVIEW","Oct 25, 2026 06:22 PM"],["HIGH","Obfuscated prompt (base64 + unicode)","User prompt",.72,"REVIEW","Oct 25, 2026 04:05 PM"],["MEDIUM","Sensitive data exfiltration attempt","Chat input",.68,"REVIEW","Oct 25, 2026 02:31 PM"],["LOW","Safe query (general question)","Voice input (Telugu)",.12,"ALLOW","Oct 25, 2026 11:18 AM"],["LOW","Document scan (normal content)","PDF document",.08,"ALLOW","Oct 25, 2026 09:50 AM"]];
+const col=s=>s>.85?"#ff4d4f":s>.65?"#ff9a2e":s>.3?"#f2c230":"#22d37a";
+const tb=document.getElementById("tb");
+function draw(f=""){tb.innerHTML=rows.map((r,i)=>[r,i]).filter(([r])=>(r[1]+r[2]).toLowerCase().includes(f.toLowerCase())).map(([r,i])=>`<tr><td>${i+1}</td><td><span class="bd ${r[0]}">${r[0]}</span> &nbsp;${r[1]}</td><td>${r[2]}</td><td style="color:${col(r[3])};font-weight:600">${r[3].toFixed(2)}</td><td><span class="dc ${r[4]}">${r[4]}</span></td><td>${r[5]}</td><td>&#8942;</td></tr>`).join("")}
+draw();document.getElementById("q").oninput=e=>draw(e.target.value);
+const spark=(id,c,d)=>{const s=document.getElementById(id);s.setAttribute("viewBox","0 0 100 34");const p=d.map((v,i)=>`${i*100/(d.length-1)},${34-v}`).join(" ");s.innerHTML=`<defs><linearGradient id="${id}g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c}" stop-opacity=".35"/><stop offset="1" stop-color="${c}" stop-opacity="0"/></linearGradient></defs><polygon points="0,34 ${p} 100,34" fill="url(#${id}g)"/><polyline points="${p}" fill="none" stroke="${c}" stroke-width="1.5" vector-effect="non-scaling-stroke"/>`};
+spark("k1","#2f7bff",[8,14,10,18,12,22,16,24,18,28,22,30]);spark("k2","#ff4d4f",[10,6,14,9,17,8,15,22,12,20,26,24]);spark("k3","#ff9a2e",[6,12,8,16,10,14,22,12,18,24,20,26]);
+(function(){const W=520,H=190,L=34,B=30,T=8,mx=240;const x=i=>L+i*(W-L-8)/23,y=v=>H-B-v*(H-B-T)/mx;
+const tot=[40,30,50,60,45,80,110,150,170,190,160,200,185,150,170,130,110,150,190,170,140,120,160,200],bl=tot.map((v,i)=>12+(i*7%5)*4),al=tot.map((v,i)=>v-bl[i]-8);
+const line=(d,c,fill)=>{const p=d.map((v,i)=>`${x(i)},${y(v)}`).join(" ");return (fill?`<polygon points="${x(0)},${y(0)} ${p} ${x(23)},${y(0)}" fill="${c}" opacity=".22"/>`:"")+`<polyline points="${p}" fill="none" stroke="${c}" stroke-width="1.8"/>`};
+let g="";[0,50,100,150,200].forEach(v=>g+=`<line x1="${L}" x2="${W-8}" y1="${y(v)}" y2="${y(v)}" stroke="#14304f"/><text x="${L-6}" y="${y(v)+3}" text-anchor="end" fill="#7f95b3" font-size="9">${v}</text>`);
+["12 AM","4 AM","8 AM","12 PM","4 PM","8 PM"].forEach((t,i)=>g+=`<text x="${x(i*4)}" y="${H-12}" text-anchor="middle" fill="#7f95b3" font-size="9">${t}</text>`);
+document.getElementById("ch").innerHTML=g+line(tot,"#2f7bff",1)+line(al,"#22d37a")+line(bl,"#ff4d4f")})();
+const chat=document.getElementById("chat"),inp=document.getElementById("in");
+function say(t){chat.insertAdjacentHTML("beforeend",`<div class="m me"></div>`);chat.lastChild.textContent=t;
+const hit=/inject|ignore/i.test(t)?"That pattern matches a high-risk prompt injection. Recommended action: block, and log the source.":/rag|harden/i.test(t)?"Sanitize retrieved text, strip hidden characters, and scan every chunk before it enters the context.":/jailbreak|dan/i.test(t)?"Jailbreaks try to role-play past safety rules. I flag persona overrides and policy-bypass phrasing.":"I can scan that for injection, jailbreak and hidden-text attacks. Paste the content to begin.";
+chat.insertAdjacentHTML("beforeend",`<div class="m bot"></div>`);chat.lastChild.textContent=hit;chat.scrollTop=chat.scrollHeight}
+document.getElementById("go").onclick=()=>{if(inp.value.trim()){say(inp.value);inp.value=""}};
+inp.onkeydown=e=>{if(e.key==="Enter")document.getElementById("go").click()};
+document.querySelectorAll(".chips button").forEach(b=>b.onclick=()=>say(b.textContent));
+document.querySelectorAll(".qa").forEach(b=>b.onclick=()=>say(b.dataset.q));
+document.querySelectorAll(".nav a").forEach(a=>a.onclick=()=>{document.querySelectorAll(".nav a").forEach(n=>n.classList.remove("on"));a.classList.add("on")});
+document.getElementById("scan").onclick=function(){this.textContent="Scanning…";setTimeout(()=>this.textContent="Run scan",1200)};
+</script>
+</body>
+</html>

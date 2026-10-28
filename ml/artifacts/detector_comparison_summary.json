@@ -1,0 +1,64 @@
+{
+  "description": "Small manually authored smoke test, not a validated security benchmark. Regex and ML are evaluated independently. Combined positive predictions mean BLOCK; REVIEW is reported separately and is not proof of safety.",
+  "sample_count": 15,
+  "thresholds": {
+    "regex_only": "At least one configured regex pattern matches",
+    "ml_only": "Attack probability >= 0.5",
+    "combined": "Action == BLOCK"
+  },
+  "metrics": {
+    "regex_only": {
+      "samples": 15,
+      "accuracy": 0.7333,
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1": 0.6667,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.5,
+      "true_positive": 4,
+      "true_negative": 7,
+      "false_positive": 0,
+      "false_negative": 4
+    },
+    "ml_only": {
+      "samples": 15,
+      "accuracy": 0.8,
+      "precision": 0.7273,
+      "recall": 1.0,
+      "f1": 0.8421,
+      "false_positive_rate": 0.4286,
+      "false_negative_rate": 0.0,
+      "true_positive": 8,
+      "true_negative": 4,
+      "false_positive": 3,
+      "false_negative": 0
+    },
+    "combined": {
+      "samples": 15,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 8,
+      "true_negative": 7,
+      "false_positive": 0,
+      "false_negative": 0
+    }
+  },
+  "combined_decision_counts": {
+    "BLOCK": 8,
+    "REVIEW": 2,
+    "ALLOW": 5
+  },
+  "benign_prompts_sent_to_review": [
+    "EN-B3",
+    "TE-B2"
+  ],
+  "mean_latency_ms": {
+    "regex_only": 0.0627,
+    "ml_only": 1.0583,
+    "combined": 0.514
+  }
+}

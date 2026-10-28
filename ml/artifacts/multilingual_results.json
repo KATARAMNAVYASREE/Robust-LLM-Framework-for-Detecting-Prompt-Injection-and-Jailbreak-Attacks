@@ -1,0 +1,86 @@
+{
+  "description": "Prototype multilingual evaluation using manually authored test cases. This is not a validated benchmark.",
+  "total_cases": 18,
+  "evaluation_threshold": 0.65,
+  "overall": {
+    "samples": 18,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "true_positive": 10,
+    "true_negative": 8,
+    "false_positive": 0,
+    "false_negative": 0
+  },
+  "average_latency_ms": 4.941494430467072,
+  "by_language": {
+    "English": {
+      "samples": 4,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 2,
+      "true_negative": 2,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "English-obfuscated": {
+      "samples": 2,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 2,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "Romanized-Telugu": {
+      "samples": 4,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 2,
+      "true_negative": 2,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "Telugu-English-mixed": {
+      "samples": 4,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 2,
+      "true_negative": 2,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "Telugu-script": {
+      "samples": 4,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 2,
+      "true_negative": 2,
+      "false_positive": 0,
+      "false_negative": 0
+    }
+  }
+}

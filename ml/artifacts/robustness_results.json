@@ -1,0 +1,419 @@
+{
+  "test_suite": "hand-authored robustness smoke tests",
+  "warning": "Small diagnostic suite; not a representative benchmark. Verify Telugu translations and labels with a fluent speaker.",
+  "case_count": 15,
+  "regex_baseline": {
+    "samples": 15,
+    "accuracy": 0.8,
+    "precision": 1.0,
+    "recall": 0.6666666666666666,
+    "f1": 0.8,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.3333333333333333,
+    "true_positive": 6,
+    "true_negative": 6,
+    "false_positive": 0,
+    "false_negative": 3
+  },
+  "ml_classifier": {
+    "samples": 15,
+    "accuracy": 0.8666666666666667,
+    "precision": 0.8181818181818182,
+    "recall": 1.0,
+    "f1": 0.9,
+    "false_positive_rate": 0.3333333333333333,
+    "false_negative_rate": 0.0,
+    "true_positive": 9,
+    "true_negative": 4,
+    "false_positive": 2,
+    "false_negative": 0,
+    "roc_auc": 0.962962962962963
+  },
+  "latency": {
+    "regex_average_ms": 0.3209800149003665,
+    "regex_p95_ms": 1.2934400292579042,
+    "ml_average_ms": 9.053640001608679,
+    "ml_p95_ms": 20.588420017156714
+  },
+  "by_category": {
+    "direct_injection": {
+      "regex": {
+        "samples": 4,
+        "accuracy": 0.25,
+        "precision": 1.0,
+        "recall": 0.25,
+        "f1": 0.4,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.75,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 3
+      },
+      "ml": {
+        "samples": 4,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 4,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    },
+    "jailbreak": {
+      "regex": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "ml": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    },
+    "prompt_extraction": {
+      "regex": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "ml": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    },
+    "data_exfiltration": {
+      "regex": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "ml": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    },
+    "leetspeak": {
+      "regex": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "ml": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    },
+    "unicode": {
+      "regex": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "ml": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    },
+    "benign_security": {
+      "regex": {
+        "samples": 2,
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 0,
+        "true_negative": 2,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "ml": {
+        "samples": 2,
+        "accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.5,
+        "false_negative_rate": 0.0,
+        "true_positive": 0,
+        "true_negative": 1,
+        "false_positive": 1,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    },
+    "benign": {
+      "regex": {
+        "samples": 4,
+        "accuracy": 1.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 0,
+        "true_negative": 4,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "ml": {
+        "samples": 4,
+        "accuracy": 0.75,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.25,
+        "false_negative_rate": 0.0,
+        "true_positive": 0,
+        "true_negative": 3,
+        "false_positive": 1,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    }
+  },
+  "by_language": {
+    "English": {
+      "regex": {
+        "samples": 8,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 4,
+        "true_negative": 4,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "ml": {
+        "samples": 8,
+        "accuracy": 0.875,
+        "precision": 0.8,
+        "recall": 1.0,
+        "f1": 0.8888888888888888,
+        "false_positive_rate": 0.25,
+        "false_negative_rate": 0.0,
+        "true_positive": 4,
+        "true_negative": 3,
+        "false_positive": 1,
+        "false_negative": 0,
+        "roc_auc": 1.0
+      }
+    },
+    "English-obfuscated": {
+      "regex": {
+        "samples": 2,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 2,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0
+      },
+      "ml": {
+        "samples": 2,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 2,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    },
+    "Telugu-script": {
+      "regex": {
+        "samples": 2,
+        "accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0,
+        "true_positive": 0,
+        "true_negative": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "ml": {
+        "samples": 2,
+        "accuracy": 0.5,
+        "precision": 0.5,
+        "recall": 1.0,
+        "f1": 0.6666666666666666,
+        "false_positive_rate": 1.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 1,
+        "false_negative": 0,
+        "roc_auc": 0.0
+      }
+    },
+    "Romanized-Telugu": {
+      "regex": {
+        "samples": 1,
+        "accuracy": 0.0,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0,
+        "true_positive": 0,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "ml": {
+        "samples": 1,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 0,
+        "false_positive": 0,
+        "false_negative": 0,
+        "roc_auc": NaN
+      }
+    },
+    "Telugu-English-mixed": {
+      "regex": {
+        "samples": 2,
+        "accuracy": 0.5,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0,
+        "true_positive": 0,
+        "true_negative": 1,
+        "false_positive": 0,
+        "false_negative": 1
+      },
+      "ml": {
+        "samples": 2,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.0,
+        "true_positive": 1,
+        "true_negative": 1,
+        "false_positive": 0,
+        "false_negative": 0,
+        "roc_auc": 1.0
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+streamlit>=1.40,<2
+numpy>=1.26,<3
+soundfile>=0.12,<1
+scipy>=1.11,<2
+sherpa-onnx>=1.10
+indic-transliteration>=2.3,<3

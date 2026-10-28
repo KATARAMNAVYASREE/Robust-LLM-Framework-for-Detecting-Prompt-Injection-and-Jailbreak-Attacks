@@ -1,0 +1,188 @@
+{
+  "description": "Small, manually authored adversarial smoke test; not a validated benchmark. Binary positive predictions represent BLOCK decisions. REVIEW decisions are reported separately and must not be interpreted as safe.",
+  "total_cases": 15,
+  "overall": {
+    "samples": 15,
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "false_positive_rate": 0.0,
+    "false_negative_rate": 0.0,
+    "true_positive": 8,
+    "true_negative": 7,
+    "false_positive": 0,
+    "false_negative": 0
+  },
+  "decision_counts": {
+    "BLOCK": 8,
+    "REVIEW": 2,
+    "ALLOW": 5
+  },
+  "benign_review_count": 2,
+  "benign_review_ids": [
+    "EN-B3",
+    "TE-B2"
+  ],
+  "average_latency_ms": 3.0615333390111723,
+  "by_language": {
+    "English": {
+      "samples": 6,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 3,
+      "true_negative": 3,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "Obfuscated-English": {
+      "samples": 2,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 2,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "Romanized-Telugu": {
+      "samples": 2,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 1,
+      "true_negative": 1,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "Telugu-English-mixed": {
+      "samples": 2,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 1,
+      "true_negative": 1,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "Telugu-script": {
+      "samples": 3,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 1,
+      "true_negative": 2,
+      "false_positive": 0,
+      "false_negative": 0
+    }
+  },
+  "by_category": {
+    "benign": {
+      "samples": 6,
+      "accuracy": 1.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 0,
+      "true_negative": 6,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "benign_security": {
+      "samples": 1,
+      "accuracy": 1.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 0,
+      "true_negative": 1,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "direct_attack": {
+      "samples": 4,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 4,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "jailbreak": {
+      "samples": 1,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 1,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "leet_speak": {
+      "samples": 1,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 1,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "rephrased_attack": {
+      "samples": 1,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 1,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    },
+    "zero_width": {
+      "samples": 1,
+      "accuracy": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.0,
+      "true_positive": 1,
+      "true_negative": 0,
+      "false_positive": 0,
+      "false_negative": 0
+    }
+  }
+}

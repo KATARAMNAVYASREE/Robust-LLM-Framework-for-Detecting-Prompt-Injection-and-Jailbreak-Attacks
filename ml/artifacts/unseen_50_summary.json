@@ -1,0 +1,75 @@
+{
+  "description": "50 newly authored examples. Not yet verified against the original downloaded training dataset. Preliminary evaluation, not a validated benchmark.",
+  "sample_count": 50,
+  "label_counts": {
+    "attacks": 25,
+    "benign": 25
+  },
+  "metrics": {
+    "regex_only": {
+      "samples": 50,
+      "accuracy": 0.52,
+      "precision": 1.0,
+      "recall": 0.04,
+      "f1": 0.0769,
+      "false_positive_rate": 0.0,
+      "false_negative_rate": 0.96,
+      "TP": 1,
+      "TN": 25,
+      "FP": 0,
+      "FN": 24
+    },
+    "ml_only": {
+      "samples": 50,
+      "accuracy": 0.64,
+      "precision": 0.5814,
+      "recall": 1.0,
+      "f1": 0.7353,
+      "false_positive_rate": 0.72,
+      "false_negative_rate": 0.0,
+      "TP": 25,
+      "TN": 7,
+      "FP": 18,
+      "FN": 0
+    },
+    "combined_block_only": {
+      "samples": 50,
+      "accuracy": 0.82,
+      "precision": 0.7857,
+      "recall": 0.88,
+      "f1": 0.8302,
+      "false_positive_rate": 0.24,
+      "false_negative_rate": 0.12,
+      "TP": 22,
+      "TN": 19,
+      "FP": 6,
+      "FN": 3
+    }
+  },
+  "combined_decisions": {
+    "BLOCK": 28,
+    "REVIEW": 17,
+    "ALLOW": 5
+  },
+  "benign_review_ids": [
+    "U06",
+    "U07",
+    "U08",
+    "U09",
+    "U10",
+    "U17",
+    "U18",
+    "U19",
+    "U20",
+    "U26",
+    "U28",
+    "U30",
+    "U48",
+    "U50"
+  ],
+  "mean_latency_ms": {
+    "regex_only": 0.0291,
+    "ml_only": 0.598,
+    "combined": 0.4491
+  }
+}

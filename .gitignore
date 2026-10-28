@@ -1,0 +1,7 @@
+.venv/
+.venv-voice/
+__pycache__/
+*.pyc
+.env
+models/t5/model.int8.onnx
+models/te/
